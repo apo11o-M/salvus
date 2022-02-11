@@ -3,7 +3,7 @@ import React from "react";
 function FilterSubs(props) {
   return (
     <div>
-      {props.subs.map((s, index) => (
+      {props.subList?.map((s, index) => (
         <div key={s}>
           <input type="checkbox" id={s} value={s} onChange={props.handleClick} />
           <label>{s}</label>
