@@ -48,7 +48,6 @@ class Canvas extends React.Component {
     this.subredditMap = new Map([...this.subredditMap.entries()].sort((a, b) => {
       return a[0].toLowerCase().localeCompare(b[0].toLowerCase());
     }));
-    console.log(this.subredditMap);
     // The reason why we need to force update is bc subredditMap is not a state variable, plus it's 
     // an async function, react will render the empty subredditMap first, then accept the fetched
     // post information. So after the subredditMap has been updated we need to forceUpdate the child 
@@ -105,15 +104,16 @@ class Canvas extends React.Component {
         (filterText && e.is_self) ||
         (filterImage && filterText && filterVideo) ||
         (!filterImage && !filterText && !filterVideo)
-      );
+        );
     });
 
     // Check the subs filter
-    if (this.state.selectedSubs > 0 && this.state.selectedSubs.length < this.subredditMap.size) {
+    if (this.state.selectedSubs.length > 0 && this.state.selectedSubs.length < this.subredditMap.size) {
       tempResult = tempResult.filter(e => {
-        return this.states.selectedSubs.includes(e.subreddit_name_prefixed);
+        return this.state.selectedSubs.includes(e.subreddit_name_prefixed);
       });
     }
+
     this.setState({ currRenderPosts: tempResult }, () => {
       console.log("currRenderPosts:")
       console.log(this.state.currRenderPosts);
@@ -121,7 +121,7 @@ class Canvas extends React.Component {
   }
 
   handleClickFilters = (event) => {
-    console.log("clicked the " + event.target.value);
+    console.log("clicked " + event.target.value);
     const isChecked = event.target.checked;
     if (isChecked) {
       this.setState({
@@ -136,7 +136,7 @@ class Canvas extends React.Component {
     }
   }
   handleClickSubs = (event) => {
-    console.log("clicked the " + event.target.value);
+    console.log("clicked " + event.target.value);
     const isChecked = event.target.checked;
     if (isChecked) {
       this.setState({
