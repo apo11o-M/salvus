@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
-import config from './credential';
 import { Container, Row, Col } from 'react-bootstrap';
+import StickyBox from 'react-sticky-box'
+import config from './credential';
 import MainColumn from './main-column/MainColumn';
 import FilterColumn from './filter-column/FilterColumn'
 import NavBar from './NavBar';
@@ -161,15 +162,17 @@ class Canvas extends React.Component {
         </header>
         <Container>
           <Row>
-            <Col sm={4}> 
-              <FilterColumn 
-                initialFetch={this.initialFetch.bind(this)} 
-                fetchPosts={this.fetchPosts.bind(this)}
-                filterPosts={this.filterPosts.bind(this)}
-                handleClickFilters={this.handleClickFilters.bind(this)}
-                handleClickSubs={this.handleClickSubs.bind(this)}
-                subMap={this.subredditMap}
-              />
+            <Col sm={4}>
+              <StickyBox offsetTop={30}>
+                <FilterColumn 
+                  initialFetch={this.initialFetch.bind(this)} 
+                  fetchPosts={this.fetchPosts.bind(this)}
+                  filterPosts={this.filterPosts.bind(this)}
+                  handleClickFilters={this.handleClickFilters.bind(this)}
+                  handleClickSubs={this.handleClickSubs.bind(this)}
+                  subMap={this.subredditMap}
+                />
+              </StickyBox>
             </Col>
             <Col sm={8}>
              <MainColumn 
