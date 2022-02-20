@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+/* .main-column {
+  background-color: rgb(202, 163, 238);
+} */
+
+:root {
+  --card-height: 700px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, #root {
+  background-color: #0D1B2A;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filter-column {
+  background-color: #1B263B;
+  color: white;
+  margin-top: 15px;
+  position: sticky;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sub-filters {
+  background-color: #1B263B;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.main-column {
+  background-color: #0D1B2A;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-column-card-post {
+  background-color: #1B263B;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 10px 10px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-img-div-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-img-div {
+  max-height: 600px;
+  display: inline-block;
+  overflow: hidden;
+}
+.card-img {
+  display: block;
+  max-height: inherit;
+  max-width: inherit;
+}
+
+.nsfw-media {
+  filter: blur(40px);
+}
+
+.main-column-card-comment {
+  background-color: #1B263B;
+  padding: 10px 10px 10px 10px;
+
 }
