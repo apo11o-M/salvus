@@ -16,6 +16,7 @@ class Canvas extends React.Component {
     }
     this.savedPosts = [];
     this.subredditMap = new Map();
+    this.subredditIcon = new Map();
   }
 
   // Fetch the saved posts from reddit 
@@ -63,6 +64,7 @@ class Canvas extends React.Component {
     .then((newList) => {
       this.savedPosts = newList;
       console.log(this.savedPosts);
+      this.createFilters();
       this.filterPosts();
     }).catch((err) => {
       console.log(err);
@@ -115,8 +117,8 @@ class Canvas extends React.Component {
     }
 
     this.setState({ currRenderPosts: tempResult }, () => {
-      console.log("currRenderPosts:")
-      console.log(this.state.currRenderPosts);
+      // console.log("currRenderPosts:")
+      // console.log(this.state.currRenderPosts);
     })
   }
 
@@ -170,7 +172,10 @@ class Canvas extends React.Component {
               />
             </Col>
             <Col sm={8}>
-             <MainColumn /> 
+             <MainColumn 
+               posts={this.state.currRenderPosts}
+               fetchPosts={this.fetchPosts.bind(this)}
+             /> 
             </Col>
           </Row>
         </Container>

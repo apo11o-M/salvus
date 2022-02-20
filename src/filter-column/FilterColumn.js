@@ -19,7 +19,9 @@ class FilterColumn extends React.Component {
         <FilterMedia handleClick={this.props.handleClickFilters} />
         <FilterNSFW handleClick={this.props.handleClickFilters} />
         <br />
-        <FilterSubs subList={Array.from(this.props.subMap.keys())} handleClick={this.props.handleClickSubs}/>
+        <div className="sub-filters">
+          <FilterSubs subList={Array.from(this.props.subMap.keys())} handleClick={this.props.handleClickSubs}/>
+        </div>
       </div>
     );
   }
