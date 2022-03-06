@@ -9,7 +9,7 @@ class MainColumn extends React.Component {
     console.log(this.props.posts);
     return (
       <div className="main-column" id="scrollableDiv">
-        <div>Wow, such empty..</div>
+        {/* <div>Wow, such empty..</div> */}
         <InfiniteScroll
           dataLength={this.props.posts.length}
           next={this.props.fetchPosts}

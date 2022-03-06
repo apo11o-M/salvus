@@ -16,6 +16,11 @@ class TextCard extends React.Component {
           <div>
             {parse(str)}
           </div>
+          <div>
+            Upvotes: {this.props.post.ups} Ratio: {this.props.post.upvote_ratio} 
+            <br />
+            Comments: {this.props.post.num_comments}
+          </div>
         </div>
       );
     } else {
@@ -26,6 +31,11 @@ class TextCard extends React.Component {
           <h3>{this.props.post.title}</h3>
           <div>
             {this.props.post.url}
+          </div>
+          <div>
+            Upvotes: {this.props.post.ups} Ratio: {this.props.post.upvote_ratio} 
+            <br />
+            Comments: {this.props.post.num_comments}
           </div>
         </div>
       );
