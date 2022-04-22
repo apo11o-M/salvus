@@ -1,25 +1,25 @@
 import React from "react";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 import { html_substr } from "../../helpers";
 
 class TextCard extends React.Component {
   render() {
-    const content = this.props.post.selftext_html;
+    const content = this.props.post.data.selftext_html;
     if (content != null) {
       // Pure text post
       const maxLength = 800
       const str = html_substr(content, maxLength);
       return (
         <div className="main-column-card-post main-column-card-post-text">
-          <h5>{this.props.post.subreddit_name_prefixed}</h5>
-          <h3>{this.props.post.title}</h3>
+          <h5>{this.props.post.data.subreddit_name_prefixed}</h5>
+          <h3>{this.props.post.data.title}</h3>
           <div>
-            {parse(str)}
+            {parse(parse(str))}
           </div>
           <div>
-            Upvotes: {this.props.post.ups} Ratio: {this.props.post.upvote_ratio} 
+            Upvotes: {this.props.post.data.ups} Ratio: {this.props.post.data.upvote_ratio} 
             <br />
-            Comments: {this.props.post.num_comments}
+            Comments: {this.props.post.data.num_comments}
           </div>
         </div>
       );
@@ -27,15 +27,15 @@ class TextCard extends React.Component {
       // Text post link to article
       return (
         <div className="main-column-card-post main-column-card-post-textlink">
-          <h5>{this.props.post.subreddit_name_prefixed}</h5>
-          <h3>{this.props.post.title}</h3>
+          <h5>{this.props.post.data.subreddit_name_prefixed}</h5>
+          <h3>{this.props.post.data.title}</h3>
           <div>
             {this.props.post.url}
           </div>
           <div>
-            Upvotes: {this.props.post.ups} Ratio: {this.props.post.upvote_ratio} 
+            Upvotes: {this.props.post.data.ups} Ratio: {this.props.post.data.upvote_ratio} 
             <br />
-            Comments: {this.props.post.num_comments}
+            Comments: {this.props.post.data.num_comments}
           </div>
         </div>
       );

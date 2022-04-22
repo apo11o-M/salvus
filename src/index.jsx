@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Canvas from './App';
-import './App.css'
+import App from './App';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <Canvas />,
+  <App />,
   document.getElementById('root')
 );
 

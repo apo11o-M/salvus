@@ -4,18 +4,15 @@ import Card from './Card'
 class MainColumn extends React.Component {
 
   render() {
-    console.log("Main Column: ")
-    console.log(this.props.posts.length)
-    console.log(this.props.posts);
     return (
       <div className="main-column" id="scrollableDiv">
-        {/* <div>Wow, such empty..</div> */}
         <InfiniteScroll
           dataLength={this.props.posts.length}
           next={this.props.fetchPosts}
           hasMore={true}
-          loader={<h4>Loading...</h4>}
-          // scrollableTarget="scrollableDiv"
+          scrollThreshold={0.9}
+          endMessage={<h4>You have reached the end.</h4>}
+          // loader={<h4>Loading...</h4>}
         >
           {this.props.posts.map((i, index) => (
             <Card 

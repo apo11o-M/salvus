@@ -4,13 +4,13 @@ import { html_substr } from "../../helpers";
 
 class CommentCard extends React.Component {
   render() {
-    const content = this.props.post.body_html;
+    const content = this.props.post.data.body_html;
     const maxLength = 600;
     const str = html_substr(content, maxLength);
     return (
       <div className="main-column-card-comment">
-        <h5>{this.props.post.author.name}</h5>
-        <p>{parse(str)}</p>
+        <h5>{this.props.post.data.author}</h5>
+        <p>{parse(parse(str))}</p>
       </div>
     );
   }

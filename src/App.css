@@ -22,7 +22,7 @@ html, #root {
 .main-column {
   background-color: #0D1B2A;
   color: white;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 .main-column-card-comment {

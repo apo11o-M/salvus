@@ -8,11 +8,12 @@ import Button from 'react-bootstrap/Button'
 class FilterColumn extends React.Component {
 
   render() {
+    // console.log(this.props)
     return (
       <div className="filter-column">
         <h2>Filters</h2> 
-        <Button variant="primary" onClick={this.props.initialFetch}>Initial Fetch</Button>
-        <Button variant="primary" onClick={this.props.fetchPosts}>Fetch Posts</Button>
+        {/* <Button variant="primary" onClick={this.props.initialFetch}>Initial Fetch</Button> */}
+        {/* <Button variant="primary" onClick={this.props.fetchPosts}>Fetch Posts</Button> */}
         <Button variant="primary" onClick={this.props.filterPosts}>Apply Filter</Button>
         <br />
         <FilterType handleClick={this.props.handleClickFilters} />

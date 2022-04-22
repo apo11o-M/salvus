@@ -7,15 +7,21 @@ import '../App.css';
 
 class Card extends React.Component {
   render() {
-    if (this.props.post.constructor.name === "Submission") {
-      if (this.props.post.post_hint === "image" || this.props.post.gallery_data != null) {
+    if (this.props.post.kind === "t1") {
+      return (
+        <CommentCard 
+          post={this.props.post}
+        />
+      );
+    } else {
+      if (this.props.post.data.post_hint === "image" || this.props.post.data.gallery_data != null) {
         // Pure image post
         return (
           <ImgCard 
             post={this.props.post}
           />
         );
-      } else if (this.props.post.is_video) {
+      } else if (this.props.post.data.is_video) {
         // Pure video post
         return (
           <VideoCard 
@@ -29,15 +35,7 @@ class Card extends React.Component {
           />
         );
       }
-    } else {
-      // Pure comment post
-      return (
-        <CommentCard 
-          post={this.props.post}
-        />
-      )
     }
-
   }
 }
 
