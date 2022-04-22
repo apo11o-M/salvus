@@ -1,6 +1,7 @@
 import React from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Card from './Card'
+import "./MainColumn.css"
 class MainColumn extends React.Component {
 
   render() {
@@ -12,7 +13,7 @@ class MainColumn extends React.Component {
           hasMore={true}
           scrollThreshold={0.9}
           endMessage={<h4>You have reached the end.</h4>}
-          // loader={<h4>Loading...</h4>}
+          loader={<LoadingScreen />}
         >
           {this.props.posts.map((i, index) => (
             <Card 
@@ -22,8 +23,17 @@ class MainColumn extends React.Component {
           ))}
         </InfiniteScroll>
       </div>
+      // <LoadingScreen />
     );
   }
+}
+
+function LoadingScreen(props) {
+  return (
+    <div>
+      Fetching your posts from reddit, one moment please...
+    </div>
+  );
 }
 
 export default MainColumn;

@@ -1,24 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-
-html, #root {
-  background-color: #0D1B2A;
-  zoom: 90%;
-}
-
-.filter-column {
-  background-color: #1B263B;
-  color: white;
-  margin-top: 15px;
-  position: sticky;
-  
-}
-
-.sub-filters {
-  background-color: #1B263B;
-  max-height: 700px;
-  overflow-y: auto;
-}
-
 .main-column {
   background-color: #0D1B2A;
   color: white;
@@ -119,4 +98,3 @@ html, #root {
 td, th, tr {
   overflow: hidden;
 }
-

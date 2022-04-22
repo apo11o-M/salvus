@@ -1,0 +1,13 @@
+.filter-column {
+  background-color: #1B263B;
+  color: white;
+  margin-top: 15px;
+  position: sticky;
+  
+}
+
+.sub-filters {
+  background-color: #1B263B;
+  max-height: 700px;
+  overflow-y: auto;
+}

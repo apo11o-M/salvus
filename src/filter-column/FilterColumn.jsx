@@ -4,6 +4,7 @@ import FilterMedia from './filters/FilterMedia';
 import FilterNSFW from './filters/FilterNSFW'
 import FilterSubs from './filters/FilterSubs'
 import Button from 'react-bootstrap/Button'
+import "./FilterColumn.css"
 
 class FilterColumn extends React.Component {
 

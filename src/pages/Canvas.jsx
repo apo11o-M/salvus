@@ -1,4 +1,4 @@
-import "./../App.css"
+import "./App.css"
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import StickyBox from 'react-sticky-box'
@@ -31,7 +31,7 @@ class Canvas extends React.Component {
   }
 
   fetchAllSavedPosts = async (after = "", iter = 1, prevRes = []) => {
-    return fetch(`https://oauth.reddit.com/user/${config.user_name}/saved?limit=100&after=${after}`, {
+    return fetch(`https://oauth.reddit.com/user/${config.user_name}/saved?limit=2&after=${after}`, {
       method: "GET",
       headers: {Authorization: `bearer ${config.access_token}`}
     }).then(res => res.json())

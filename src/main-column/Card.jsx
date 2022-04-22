@@ -3,7 +3,7 @@ import ImgCard from './cards/ImgCard';
 import VideoCard from './cards/VideoCard';
 import TextCard from './cards/TextCard';
 import CommentCard from './cards/CommentCard';
-import '../App.css';
+import './MainColumn.css';
 
 class Card extends React.Component {
   render() {
